@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{% url 'create' %}" method='post'>
+    {% csrf_token%}
+    <h4>제목: </h4>
+    <input type="text" name="title">
+    <br>
+    <br>
+    <div class="filebox"> <label for="ex_file">업로드</label> <input type="file" id="ex_file" name="image"> </div>
+    <br>
+    <br>
+    <h4>본문: </h4>
+    <textarea cols=40 rows=10 name="body"></textarea>
+    <br>
+    <br>
+    <input class="btn btn-dark" type="submit" value="제출하기">
+</form>
+
+{% endblock %}
